@@ -1,10 +1,10 @@
 from fasthtml.common import *
 
-@rt("/")
-def get():
+# @rt("/")
+def add_user_component():
     return Titled(
-        "Page 1",
-        Div("Add User"),
+        "Main Page",
+        Div("Add User Section"),
         Hr(),
         Div ("The number of users in my database are X") )
 

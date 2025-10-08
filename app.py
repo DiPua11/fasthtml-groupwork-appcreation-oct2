@@ -1,24 +1,27 @@
 from fasthtml.common import *
-# from pages.page1 import add_user_page
+from pages.page1 import add_user_component
 # from pages.page2 import list_users_page
 
 app, rt = fast_app()
 
-# @rt("/")
+# @rt("/") NOW THIS PAGE WILL PULL CONTENT FROM THE PAGE1.PY FILE
 # def get():
 #     return Titled("Main Page", P("Listing Users"))
 
 @rt("/")
 def get():
-    return Titled("Main Page",
-        Div("Add User"),
-        Hr(),
-        Div("The number of users in my database are X")
-    ) 
+    return add_user_component()
 
-@rt("/page2")
-def get():
-    return Titled("List of Users", P("Listing Users"))
+    #Came back and removed this section. It's moving to page1.py
+    # return Titled("Main Page", 
+    #     Div("Add User"),
+    #     Hr(),
+    #     Div("The number of users in my database are X")
+    # ) 
+
+# @rt("/page2") WE'LL COME BACK TO THIS
+# def get():
+#     return Titled("List of Users", P("Listing Users"))
 
 
 # @rt("/diana")
@@ -55,7 +58,7 @@ serve()
 
 
 #FOLLOWING CLASS VIDEO - 1st ATTEMPT
-# from fasthtml.common import *
+# from fasthtml.common import *s
 # from pages.page1 import add_user_page
 # from pages.page2 import list_users_page
 
