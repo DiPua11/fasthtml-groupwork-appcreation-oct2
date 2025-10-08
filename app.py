@@ -1,19 +1,60 @@
 from fasthtml.common import *
-from pages.page1 import get_page1
-from pages.page2 import get_page2
+# from pages.page1 import add_user_page
+# from pages.page2 import list_users_page
 
 app, rt = fast_app()
 
-@rt("/page1")
-def page1():
-    return get_page1()
+# @rt("/")
+# def get():
+#     return Titled("Main Page", P("Listing Users"))
+
+@rt("/")
+def get():
+    return Titled("Main Page",
+        Div("Add User"),
+        Hr(),
+        Div("The number of users in my database are X")
+    ) 
 
 @rt("/page2")
-def page2():
-    return get_page2
+def get():
+    return Titled("List of Users", P("Listing Users"))
+
+
+# @rt("/diana")
+# def get():
+#     return Titled(
+#         "Diana's Page",
+#         P("Listing Users")
+#     )
 
 serve()
 
+
+# @rt("/")
+# def get():
+#     return Div("Hello World")
+
+
+# GROUPWORK CODE WITH NICK AND MARITZA - 2nd ATTEMPT
+# from fasthtml.common import *
+# from pages.page1 import get_page1
+# from pages.page2 import get_page2
+
+# app, rt = fast_app()
+
+# @rt("/page1")
+# def page1():
+#     return get_page1()
+
+# @rt("/page2")
+# def page2():
+#     return get_page2
+
+# serve()
+
+
+#FOLLOWING CLASS VIDEO - 1st ATTEMPT
 # from fasthtml.common import *
 # from pages.page1 import add_user_page
 # from pages.page2 import list_users_page
