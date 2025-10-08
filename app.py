@@ -1,16 +1,27 @@
 from fasthtml.common import *
-from pages.page1 import add_user_component
-# from pages.page2 import list_users_page
+from pages.add_user import add_user_page
+from pages.list_users import list_users_page
 
 app, rt = fast_app()
 
-# @rt("/") NOW THIS PAGE WILL PULL CONTENT FROM THE PAGE1.PY FILE
-# def get():
-#     return Titled("Main Page", P("Listing Users"))
-
-@rt("/")
+@rt("/") 
 def get():
-    return add_user_component()
+    return add_user_page()
+
+
+list_of_users = [
+    {"first_name": "Diana", "last_name": "DeRego"},
+    {"first_name": "Greg", "last_name": "Clay"},
+    {"first_name": "John", "last_name": "Doe"},
+]
+
+@rt("/list_users")
+def get():
+    return list_users_page(list_of_users)
+
+# @rt("/page2")
+# def get():
+#     return list_users_page(list_of_users)
 
     #Came back and removed this section. It's moving to page1.py
     # return Titled("Main Page", 
